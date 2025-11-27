@@ -1,0 +1,23 @@
+routeId,departureStop,arrivalStop,travelMinutes,operator
+1,City Centre,University,15,Translink
+2,University,Airport,40,Ulsterbus
+3,City Centre,Airport,50,Bus Eireann
+4,Airport,City Centre,45,Translink
+5,University,City Centre,18,Bus Eireann
+6,City Centre,Harbour,12,HarbourLine
+7,Harbour,Airport,22,CityLink
+8,City Centre,Harbour,15,Translink
+9,Harbour,University,17,Ulsterbus
+10,University,Harbour,20,Translink
+11,City Centre,Airport,42,Ulsterbus
+12,Airport,Harbour,25,MetroRapid
+13,Harbour,City Centre,14,Translink
+14,City Centre,University,13,Ulsterbus
+15,University,Airport,38,Bus Eireann
+16,Suburbs,City Centre,28,AidanBus
+17,Suburbs,Airport,55,MetroRapid
+18,City Centre,Suburbs,30,Bus Eireann
+19,City Centre,Tech Park,16,GliderExpress
+20,Tech Park,Airport,27,AidanBus
+21,Tech Park,University,11,Translink
+22,Airport,Tech Park,24,CityLink
