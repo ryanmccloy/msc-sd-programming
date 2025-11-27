@@ -130,11 +130,13 @@ public class BusRoute {
 	 * displays all details
 	 */
 	public void displayAll() {
+		System.out.println();
 		System.out.printf("Route ID: %d%n", this.routeId);
 		System.out.printf("Departs: %s%n", this.departure);
 		System.out.printf("Arrives: %s%n", this.arrival);
 		System.out.printf("Travel Time (mins): %d%n", this.travelMinutes);
 		System.out.printf("Operator: %s%n", this.operator);
+		System.out.println();
 		System.out.println("------------------");
 		
 		
