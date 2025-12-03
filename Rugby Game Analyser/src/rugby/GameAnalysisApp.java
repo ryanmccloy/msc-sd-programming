@@ -100,6 +100,12 @@ public class GameAnalysisApp {
 				}
 
 				break;
+				
+			case 4: 
+				// new thread
+				Thread t = new Thread(new PrintGamesThread());
+				t.start();
+				break;
 			case 0:
 				System.out.println("----------------------------");
 				System.out.println("Goodbye! See you next time :)");
@@ -128,6 +134,11 @@ public class GameAnalysisApp {
 			System.err.println("Invalid country");
 			return results;
 		}
+		
+		if (winner.matches(".*\\d.*")) {
+	        System.err.println("Invalid country: Name cannot contain numbers.");
+	        return results;
+	    }
 
 		for (RugbyGame game : games) {
 
@@ -157,6 +168,11 @@ public class GameAnalysisApp {
 			System.err.println("Invalid country");
 			return results;
 		}
+		
+		if (country.matches(".*\\d.*")) {
+	        System.err.println("Invalid country: Name cannot contain numbers.");
+	        return results;
+	    }
 
 		for (RugbyGame game : games) {
 

@@ -12,6 +12,7 @@ public class RugbyGame {
 	 * Constants for text formatting
 	 */
 	final static String GREEN_TEXT = "\033[0;32m";
+	final static String RED_TEXT = "\033[0;31m";
 	final static String BOLD_TEXT = "\033[1m";
 	final static String RESET_TEXT = "\033[0m";
 	
@@ -43,7 +44,7 @@ public class RugbyGame {
 		this.team1Score = team1Score;
 		this.team2 = team2;
 		this.team2Score = team2Score;
-		this.winner = (team1Score > team2Score ? team1 : team2);
+		this.calculateWinner();
 	}
 
 
@@ -130,7 +131,13 @@ public class RugbyGame {
 	 * calculate the winner of the game
 	 */
 	public void calculateWinner() {
-		this.winner = (team1Score > team2Score ? team1 : team2);
+		if (this.team1Score > this.team2Score) {
+			this.winner = team1;
+		} else if (this.team2Score > this.team1Score) {
+			this.winner = team2;
+		} else {
+			this.winner = "Draw";
+		}
 	}
 
 
@@ -139,7 +146,7 @@ public class RugbyGame {
 	 */
 	@Override
 	public String toString() {
-		return team1 + " " + team1Score + "\t:  " + team2 + " " + team2Score + "\t|    " + "Winner " + GREEN_TEXT +  winner + RESET_TEXT ;
+		return team1 + " " + team1Score + "\t:  " + team2 + " " + team2Score + "\t|    " + "Winner " + ((!winner.equals("Draw")) ? GREEN_TEXT : RED_TEXT) +  winner + RESET_TEXT ;
 	}
 	
 	
