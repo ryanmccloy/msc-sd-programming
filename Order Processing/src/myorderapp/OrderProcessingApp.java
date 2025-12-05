@@ -56,13 +56,14 @@ public class OrderProcessingApp {
 		do {
 			
 			// small delay to allow any actions to be notified to user
-//			try {
-//				Thread.sleep(1000);
-//			} catch () {
-//				
-//			}
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				System.out.println(e.getMessage());
+			}
 
 			// menu
+			System.out.println();
 			System.out.println("Order Menu");
 			System.out.println();
 			System.out.println("1. Show all orders");

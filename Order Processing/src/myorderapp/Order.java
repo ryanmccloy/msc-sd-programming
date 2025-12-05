@@ -189,7 +189,7 @@ public class Order {
         System.out.println("Order ID: " + orderID);
         System.out.println("Customer Name: " + customerName);
         System.out.println("Item ID: " + itemID);
-        System.out.println("Item Name: " + itemName);
+        System.out.println("Item Name: " + itemName.toUpperCase());
         System.out.println("Quantity: " + quantity);
         System.out.println("Delivery Area: " + deliveryArea);
         System.out.println("Priority: " + priority);
