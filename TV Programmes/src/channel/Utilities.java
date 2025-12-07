@@ -169,7 +169,7 @@ public class Utilities {
 		List<Programme> results = new ArrayList<Programme>(shows);
 
 		Collections.sort(results, new CompareProgrammeRatingLowToHigh());
-
+ 
 		return results;
 	}
 
