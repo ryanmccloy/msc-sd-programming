@@ -12,7 +12,21 @@ public class FlightScanner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		
+		// get geolocation 
+			// hardcoded
+			// address search and logic
+		
+		// make intermittent API calls with coordinates?
+		
+		// return appropriate flights
+		
+		// cross check result with flights CSV??
+		
+		
+		
+		
 
 	}
 
