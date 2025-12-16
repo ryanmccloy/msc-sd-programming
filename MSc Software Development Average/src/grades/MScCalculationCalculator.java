@@ -52,7 +52,7 @@ public class MScCalculationCalculator {
 		 */
 		Map<Integer, int[]> computingFoundationsResults = new TreeMap<Integer, int[]>();
 		int[] computingFoundationsP1 = { 30, 30 };
-		int[] computingFoundationsP2 = { 57, 70 };
+		int[] computingFoundationsP2 = { 60, 70 };
 		computingFoundationsResults.put(1, computingFoundationsP1);
 		computingFoundationsResults.put(2, computingFoundationsP2); // update once official result received
 
