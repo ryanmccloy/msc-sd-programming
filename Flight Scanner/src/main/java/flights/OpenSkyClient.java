@@ -8,13 +8,19 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  * 
  */
 public class OpenSkyClient {
 
-	// 1. Creating the Client once
+	// Creating the Client once
 	private static final HttpClient client = HttpClient.newHttpClient();
+	
+	// mapper to parse JSON response
+	private static final ObjectMapper mapper = new ObjectMapper();
 
 	/**
 	 * method sends an API request to OpenSky to query flights via a specific range calculated by given latitude and longitude
@@ -22,7 +28,7 @@ public class OpenSkyClient {
 	 * @param lon
 	 * @return
 	 */
-	public static String getLiveFlights(double lat, double lon) {
+	public static JsonNode getLiveFlights(double lat, double lon) {
 		// Step 1: Get the URL
 		String url = buildURL(lat, lon);
 
@@ -32,7 +38,7 @@ public class OpenSkyClient {
 		// Step 3: Send it
 		try {
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString()); 
-			return response.body();
+			return mapper.readTree(response.body());
 
 		} catch (Exception e) {
 			e.printStackTrace();
