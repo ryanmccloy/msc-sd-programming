@@ -52,7 +52,6 @@ public class FlightScanner {
 			getLatAndLong();
 			delayThread(2000);
 
-
 			while (live) {
 				// get the flight data from the OpenSky API call
 				JsonNode flightData = OpenSkyClient.getLiveFlights(coordinates.get("latitude"),
@@ -66,8 +65,14 @@ public class FlightScanner {
 						t.interrupt();
 						System.out.println();
 					}
-					
+
 					System.out.println(parsedFlightData.toString());
+					
+					// TODO
+					// check if call-sign exists in CSV
+						// read details if so
+						// if not, make AirLabs API call and store data in CSV
+					// show full details to screen
 				} else {
 					// start new Thread if no flights overhead
 					if (!t.isAlive()) {
@@ -77,7 +82,7 @@ public class FlightScanner {
 					}
 
 				}
-				
+
 				Thread.sleep(60000);
 
 			}
@@ -166,7 +171,14 @@ public class FlightScanner {
 		}
 
 		for (JsonNode flight : statesNode) {
-			results.add(flight.get(1).asText().trim());
+
+			boolean airborne = !flight.get(8).asBoolean();
+
+			if (airborne) {
+				String callsign = flight.get(1).asText().trim();
+				results.add(callsign);
+			}
+
 		}
 
 		return results;
